@@ -1,0 +1,6 @@
+timestamp=[2025-09-29 22:58:21], mode=WORKBENCH_START, duration=0:00:06.122, duration_ms=6122, data={}
+timestamp=[2025-09-29 22:58:22], mode=WORKBENCH_UI_INIT, duration=0:00:00.696, duration_ms=696, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2025-09-29 23:00:13], mode=APP_CREATION, duration=0:00:40.716, duration_ms=40716, data={name=ps_pl_bram, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=system_wrapper, application_type=application}
+timestamp=[2025-09-29 23:01:49], mode=PLATFORM_GENERATION, duration=0:00:47.773, duration_ms=47773, data={name=system_wrapper}
+timestamp=[2025-09-30 22:32:31], mode=WORKBENCH_START, duration=0:00:31.109, duration_ms=31109, data={}
+timestamp=[2025-09-30 22:32:34], mode=WORKBENCH_UI_INIT, duration=0:00:03.270, duration_ms=3270, data={editors_count=3, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,ps_pl_bram,ps_pl_bram_system,system_wrapper}

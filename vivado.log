@@ -1,0 +1,401 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Sep 25 15:40:05 2025
+# Process ID: 13888
+# Current directory: D:/fpga/Embedded_Vitis/ps_pl_bram
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29772 D:\fpga\Embedded_Vitis\ps_pl_bram\ps_pl_bram.xpr
+# Log file: D:/fpga/Embedded_Vitis/ps_pl_bram/vivado.log
+# Journal file: D:/fpga/Embedded_Vitis/ps_pl_bram\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/ruanjian/Vivado/Vivado/2019.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'system_pl_bram_rd_0_0' generated file not found 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'system_pl_bram_rd_0_0' generated file not found 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'system_pl_bram_rd_0_0' generated file not found 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'system_pl_bram_rd_0_0' generated file not found 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'system_pl_bram_rd_0_0' generated file not found 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0_sim_netlist.vhdl'. Please regenerate to continue.
+open_project: Time (s): cpu = 00:00:41 ; elapsed = 00:00:21 . Memory (MB): peak = 909.852 ; gain = 239.492
+update_compile_order -fileset sources_1
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+WARNING: [Common 17-9] Error reading message records.
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0'.
+report_ip_status -name ip_status
+upgrade_ip [get_ips]
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+WARNING: [BD 41-176] The physical port 'S_AXI_GP2_rd_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP2_wr_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP3_rd_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_GP3_wr_socket' specified in the portmap, is not found on the block! 
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:4.1 - axi_bram_ctrl_0
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - axi_mem_intercon
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_50M
+Adding component instance block -- xilinx.com:user:pl_bram_rd:1.0 - pl_bram_rd_0
+Successfully read diagram <system> from BD file <D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd>
+Upgrading 'D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.runs/system_pl_bram_rd_0_0_synth_1
+
+INFO: [IP_Flow 19-3422] Upgraded system_pl_bram_rd_0_0 (pl_bram_rd_v1.0 1.0) from revision 2 to revision 3
+Wrote  : <D:\fpga\Embedded_Vitis\ps_pl_bram\ps_pl_bram.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+upgrade_ip: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1123.410 ; gain = 64.852
+d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0.xci
+regenerate_bd_layout
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+Wrote  : <D:\fpga\Embedded_Vitis\ps_pl_bram\ps_pl_bram.srcs\sources_1\bd\system\system.bd> 
+Wrote  : <D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(12) - Only lower order bits will be connected.
+VHDL Output written to : D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(12) - Only lower order bits will be connected.
+VHDL Output written to : D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/sim/system.v
+VHDL Output written to : D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/hdl/system_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block pl_bram_rd_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_pc .
+Exporting to file D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/hw_handoff/system.hwh
+Generated Block Design Tcl file D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
+Generated Hardware Definition File D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP system_auto_pc_0, cache-ID = b1e1c10WARNING: [Common 17-9] Error reading message records.
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Thu Sep 25 15:59:12 2025] Launched system_auto_pc_0_synth_1...
+Run output will be captured here: D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.runs/system_auto_pc_0_synth_1/runme.log
+[Thu Sep 25 15:59:12 2025] Launched impl_1...
+Run output will be captured here: D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 25 16:04:48 2025...
+y (MB): peak = 1269.176 ; gain = 145.766
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg400-2
+INFO: [Device 21-403] Loading part xc7z020clg400-2
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_axi_bram_ctrl_0_0/system_axi_bram_ctrl_0_0.dcp' for cell 'system_i/axi_bram_ctrl_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_blk_mem_gen_0_0/system_blk_mem_gen_0_0.dcp' for cell 'system_i/blk_mem_gen_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0.dcp' for cell 'system_i/pl_bram_rd_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.dcp' for cell 'system_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.dcp' for cell 'system_i/rst_ps7_0_50M'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp' for cell 'system_i/axi_mem_intercon/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0.dcp' for cell 'system_i/axi_mem_intercon/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 1434.496 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'system_wrapper'...
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1573.324 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 1767.051 ; gain = 497.875
+create_debug_core u_ila_0 ila
+set_property C_DATA_DEPTH 4096 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
+connect_debug_port u_ila_0/clk [get_nets [list system_i/processing_system7_0/inst/FCLK_CLK0 ]]
+set_property port_width 32 [get_debug_ports u_ila_0/probe0]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {system_i/blk_mem_gen_0/U0/doutb[0]} {system_i/blk_mem_gen_0/U0/doutb[1]} {system_i/blk_mem_gen_0/U0/doutb[2]} {system_i/blk_mem_gen_0/U0/doutb[3]} {system_i/blk_mem_gen_0/U0/doutb[4]} {system_i/blk_mem_gen_0/U0/doutb[5]} {system_i/blk_mem_gen_0/U0/doutb[6]} {system_i/blk_mem_gen_0/U0/doutb[7]} {system_i/blk_mem_gen_0/U0/doutb[8]} {system_i/blk_mem_gen_0/U0/doutb[9]} {system_i/blk_mem_gen_0/U0/doutb[10]} {system_i/blk_mem_gen_0/U0/doutb[11]} {system_i/blk_mem_gen_0/U0/doutb[12]} {system_i/blk_mem_gen_0/U0/doutb[13]} {system_i/blk_mem_gen_0/U0/doutb[14]} {system_i/blk_mem_gen_0/U0/doutb[15]} {system_i/blk_mem_gen_0/U0/doutb[16]} {system_i/blk_mem_gen_0/U0/doutb[17]} {system_i/blk_mem_gen_0/U0/doutb[18]} {system_i/blk_mem_gen_0/U0/doutb[19]} {system_i/blk_mem_gen_0/U0/doutb[20]} {system_i/blk_mem_gen_0/U0/doutb[21]} {system_i/blk_mem_gen_0/U0/doutb[22]} {system_i/blk_mem_gen_0/U0/doutb[23]} {system_i/blk_mem_gen_0/U0/doutb[24]} {system_i/blk_mem_gen_0/U0/doutb[25]} {system_i/blk_mem_gen_0/U0/doutb[26]} {system_i/blk_mem_gen_0/U0/doutb[27]} {system_i/blk_mem_gen_0/U0/doutb[28]} {system_i/blk_mem_gen_0/U0/doutb[29]} {system_i/blk_mem_gen_0/U0/doutb[30]} {system_i/blk_mem_gen_0/U0/doutb[31]} ]]
+create_debug_port u_ila_0 probe
+set_property port_width 11 [get_debug_ports u_ila_0/probe1]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {system_i/blk_mem_gen_0/U0/addrb[2]} {system_i/blk_mem_gen_0/U0/addrb[3]} {system_i/blk_mem_gen_0/U0/addrb[4]} {system_i/blk_mem_gen_0/U0/addrb[5]} {system_i/blk_mem_gen_0/U0/addrb[6]} {system_i/blk_mem_gen_0/U0/addrb[7]} {system_i/blk_mem_gen_0/U0/addrb[8]} {system_i/blk_mem_gen_0/U0/addrb[9]} {system_i/blk_mem_gen_0/U0/addrb[10]} {system_i/blk_mem_gen_0/U0/addrb[11]} {system_i/blk_mem_gen_0/U0/addrb[12]} ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe2]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list system_i/blk_mem_gen_0/U0/enb ]]
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2160.855 ; gain = 0.000
+Writing placer database...
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 2165.375 ; gain = 0.160
+[Thu Sep 25 16:05:37 2025] Launched impl_1...
+Run output will be captured here: D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.runs/impl_1/runme.log
+generate_target all [get_files  D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd]
+INFO: [BD 41-1637] Generated targets are already up-to-date for block design 'system' - hence not re-generating.
+export_ip_user_files -of_objects [get_files D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd]
+export_simulation -of_objects [get_files D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd] -directory D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.ip_user_files/sim_scripts -ip_user_files_dir D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.ip_user_files -ipstatic_source_dir D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.cache/compile_simlib/modelsim} {questa=D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.cache/compile_simlib/questa} {riviera=D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.cache/compile_simlib/riviera} {activehdl=D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run impl_1 -prev_step 
+generate_target all [get_files  D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd]
+INFO: [BD 41-1637] Generated targets are already up-to-date for block design 'system' - hence not re-generating.
+export_ip_user_files -of_objects [get_files D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd]
+export_simulation -of_objects [get_files D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd] -directory D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.ip_user_files/sim_scripts -ip_user_files_dir D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.ip_user_files -ipstatic_source_dir D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.cache/compile_simlib/modelsim} {questa=D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.cache/compile_simlib/questa} {riviera=D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.cache/compile_simlib/riviera} {activehdl=D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+open_bd_design {D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd}
+make_wrapper -files [get_files D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd] -top
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd]
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z020clg400-2
+Top: system_wrapper
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2370.258 ; gain = 203.676
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system' [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:610]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_bram_ctrl_0_0' [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_bram_ctrl_0_0' (1#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_axi_mem_intercon_0' [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:1003]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1TEAG88' [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1TEAG88' (2#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:12]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_JDPFEH' [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:158]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_JDPFEH' (3#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:158]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1P403ZT' [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:304]
+INFO: [Synth 8-6157] synthesizing module 'system_auto_pc_0' [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_auto_pc_0' (4#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1P403ZT' (5#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:304]
+INFO: [Synth 8-6157] synthesizing module 'system_xbar_0' [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_xbar_0' (6#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_axi_mem_intercon_0' (7#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:1003]
+INFO: [Synth 8-6157] synthesizing module 'system_blk_mem_gen_0_0' [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_blk_mem_gen_0_0' (8#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_pl_bram_rd_0_0' [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_pl_bram_rd_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_pl_bram_rd_0_0' (9#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_pl_bram_rd_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (10#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_rst_ps7_0_50M_0' [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_rst_ps7_0_50M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_rst_ps7_0_50M_0' (11#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/realtime/system_rst_ps7_0_50M_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'system_rst_ps7_0_50M_0' has 10 connections declared, but only 6 given [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:994]
+INFO: [Synth 8-6155] done synthesizing module 'system' (12#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/synth/system.v:610]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (13#1) [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+WARNING: [Synth 8-3331] design s00_couplers_imp_1P403ZT has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_1P403ZT has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_JDPFEH has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_JDPFEH has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_JDPFEH has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_JDPFEH has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_1TEAG88 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_1TEAG88 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_1TEAG88 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_1TEAG88 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design system_axi_mem_intercon_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design system_axi_mem_intercon_0 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design system_axi_mem_intercon_0 has unconnected port M01_ACLK
+WARNING: [Synth 8-3331] design system_axi_mem_intercon_0 has unconnected port M01_ARESETN
+WARNING: [Synth 8-3331] design system_axi_mem_intercon_0 has unconnected port S00_ACLK
+WARNING: [Synth 8-3331] design system_axi_mem_intercon_0 has unconnected port S00_ARESETN
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2420.703 ; gain = 254.121
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2438.633 ; gain = 272.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2438.633 ; gain = 272.051
+---------------------------------------------------------------------------------
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_axi_bram_ctrl_0_0/system_axi_bram_ctrl_0_0.dcp' for cell 'system_i/axi_bram_ctrl_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_blk_mem_gen_0_0/system_blk_mem_gen_0_0.dcp' for cell 'system_i/blk_mem_gen_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0.dcp' for cell 'system_i/pl_bram_rd_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.dcp' for cell 'system_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.dcp' for cell 'system_i/rst_ps7_0_50M'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp' for cell 'system_i/axi_mem_intercon/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0.dcp' for cell 'system_i/axi_mem_intercon/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 2438.633 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2539.930 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2539.930 ; gain = 373.348
+40 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2539.930 ; gain = 373.348
+add_files -fileset constrs_1 -norecurse D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/constrs_1/new/system_wrapper.xdc
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd]
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Parsing XDC File [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/constrs_1/new/system_wrapper.xdc]
+Finished Parsing XDC File [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/constrs_1/new/system_wrapper.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/constrs_1/new/system_wrapper.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 2604.258 ; gain = 64.328
+current_design synth_1
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd]
+refresh_design
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_axi_bram_ctrl_0_0/system_axi_bram_ctrl_0_0.dcp' for cell 'system_i/axi_bram_ctrl_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_blk_mem_gen_0_0/system_blk_mem_gen_0_0.dcp' for cell 'system_i/blk_mem_gen_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0.dcp' for cell 'system_i/pl_bram_rd_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.dcp' for cell 'system_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.dcp' for cell 'system_i/rst_ps7_0_50M'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp' for cell 'system_i/axi_mem_intercon/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0.dcp' for cell 'system_i/axi_mem_intercon/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 2669.574 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Parsing XDC File [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/constrs_1/new/system_wrapper.xdc]
+Finished Parsing XDC File [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/constrs_1/new/system_wrapper.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'system_wrapper'...
+refresh_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 2681.855 ; gain = 30.062
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Sep 25 16:22:46 2025] Launched synth_1...
+Run output will be captured here: D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.runs/synth_1/runme.log
+[Thu Sep 25 16:22:46 2025] Launched impl_1...
+Run output will be captured here: D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.runs/impl_1/runme.log
+write_hw_platform -fixed -force  -include_bit -file D:/fpga/Embedded_Vitis/ps_pl_bram/system_wrapper.xsa
+INFO: [Vivado 12-4895] Creating Hardware Platform: D:/fpga/Embedded_Vitis/ps_pl_bram/system_wrapper.xsa ...
+INFO: [Hsi 55-2053] elapsed time for repository (D:/ruanjian/Vivado/Vivado/2019.2/data\embeddedsw) loading 1 seconds
+Command: write_bitstream -force D:/fpga/Embedded_Vitis/ps_pl_bram/.Xil/Vivado-20760-DESKTOP-HPA0FNB/xsa/system_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+4 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+write_bitstream failed
+ERROR: [Common 17-69] Command failed: The current design is not implemented.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-69] Command failed: The current design is not implemented.
+
+INFO: [Vivado 12-8231] Launching Vitis
+INFO: [Vivado 12-417] Running vitis
+INFO: [Vivado 12-8232] Vitis launch initiated. Please check console for any further messages.
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/system.bd]
+refresh_design
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_axi_bram_ctrl_0_0/system_axi_bram_ctrl_0_0.dcp' for cell 'system_i/axi_bram_ctrl_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_blk_mem_gen_0_0/system_blk_mem_gen_0_0.dcp' for cell 'system_i/blk_mem_gen_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_0/system_pl_bram_rd_0_0.dcp' for cell 'system_i/pl_bram_rd_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.dcp' for cell 'system_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.dcp' for cell 'system_i/rst_ps7_0_50M'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_xbar_0/system_xbar_0.dcp' for cell 'system_i/axi_mem_intercon/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'd:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0.dcp' for cell 'system_i/axi_mem_intercon/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 2820.055 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc] for cell 'system_i/processing_system7_0/inst'
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0_board.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_rst_ps7_0_50M_0/system_rst_ps7_0_50M_0.xdc] for cell 'system_i/rst_ps7_0_50M/U0'
+Parsing XDC File [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/constrs_1/new/system_wrapper.xdc]
+Finished Parsing XDC File [D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/constrs_1/new/system_wrapper.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'system_wrapper'...
+refresh_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2820.055 ; gain = 0.387
+close_design
+close_design
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Thu Sep 25 19:27:04 2025] Launched impl_1...
+Run output will be captured here: D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.runs/impl_1/runme.log
+ipx::edit_ip_in_project -upgrade true -name pl_bram_rd_v1_0_project -directory D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.tmp/pl_bram_rd_v1_0_project d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/ruanjian/Vivado/Vivado/2019.2/data/ip'.
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2861.344 ; gain = 0.000
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/src/bram_rd.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0.v:]
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2861.344 ; gain = 0.000
+update_compile_order -fileset sources_1
+launch_runs impl_1 -jobs 8
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/src/bram_rd.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/src/bram_rd.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/src/bram_rd.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/src/bram_rd.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0/hdl/pl_bram_rd_v1_0.v:]
+[Thu Sep 25 19:31:22 2025] Launched synth_1...
+Run output will be captured here: d:/fpga/embedded_vitis/ps_pl_bram/ps_pl_bram.tmp/pl_bram_rd_v1_0_project/pl_bram_rd_v1_0_project.runs/synth_1/runme.log
+[Thu Sep 25 19:31:22 2025] Launched impl_1...
+Run output will be captured here: d:/fpga/embedded_vitis/ps_pl_bram/ps_pl_bram.tmp/pl_bram_rd_v1_0_project/pl_bram_rd_v1_0_project.runs/impl_1/runme.log
+current_project ps_pl_bram
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Sep 27 15:05:56 2025...

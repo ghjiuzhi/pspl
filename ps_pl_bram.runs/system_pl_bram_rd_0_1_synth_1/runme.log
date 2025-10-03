@@ -1,0 +1,453 @@
+
+*** Running vivado
+    with args -log system_pl_bram_rd_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_pl_bram_rd_0_1.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source system_pl_bram_rd_0_1.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'd:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/fpga/Embedded_Vitis/ps_pl_bram/ip_repo/pl_bram_rd_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/ruanjian/Vivado/Vivado/2019.2/data/ip'.
+Command: synth_design -top system_pl_bram_rd_0_1 -part xc7z020clg400-2 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-2
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14844 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1000.742 ; gain = 236.012
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_pl_bram_rd_0_1' [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_1/synth/system_pl_bram_rd_0_1.v:57]
+INFO: [Synth 8-6157] synthesizing module 'pl_bram_rd_v1_0' [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/pl_bram_rd_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pl_bram_rd_v1_0_S00_AXI' [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/pl_bram_rd_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/pl_bram_rd_v1_0_S00_AXI.v:238]
+INFO: [Synth 8-226] default block is never used [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/pl_bram_rd_v1_0_S00_AXI.v:379]
+INFO: [Synth 8-6157] synthesizing module 'bram_rd' [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/bram_rd.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/bram_rd.v:54]
+WARNING: [Synth 8-3848] Net ram_wr_data in module/entity bram_rd does not have driver. [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/bram_rd.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'bram_rd' (1#1) [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/bram_rd.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'pl_bram_rd_v1_0_S00_AXI' (2#1) [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/pl_bram_rd_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'pl_bram_rd_v1_0' (3#1) [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ipshared/af21/hdl/pl_bram_rd_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'system_pl_bram_rd_0_1' (4#1) [d:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.srcs/sources_1/bd/system/ip/system_pl_bram_rd_0_1/synth/system_pl_bram_rd_0_1.v:57]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[31]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[30]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[29]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[28]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[27]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[26]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[25]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[24]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[23]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[22]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[21]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[20]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[19]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[18]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[17]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[16]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[15]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[14]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[13]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[12]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[11]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[10]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[9]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[8]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[7]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[6]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[5]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[4]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[3]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[2]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[1]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_wr_data[0]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[31]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[30]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[29]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[28]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[27]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[26]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[25]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[24]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[23]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[22]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[21]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[20]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[19]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[18]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[17]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[16]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[15]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[14]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[13]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[12]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[11]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[10]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[9]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[8]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[7]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[6]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[5]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[4]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[3]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[2]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[1]
+WARNING: [Synth 8-3331] design bram_rd has unconnected port ram_rd_data[0]
+WARNING: [Synth 8-3331] design pl_bram_rd_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design pl_bram_rd_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design pl_bram_rd_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design pl_bram_rd_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design pl_bram_rd_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design pl_bram_rd_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1076.469 ; gain = 311.738
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1076.469 ; gain = 311.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1076.469 ; gain = 311.738
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1076.469 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1159.867 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 1161.902 ; gain = 2.035
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1161.902 ; gain = 397.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1161.902 ; gain = 397.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1161.902 ; gain = 397.172
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'flow_cnt_reg' in module 'bram_rd'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               00
+                 iSTATE0 |                              010 |                               01
+                 iSTATE1 |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'flow_cnt_reg' using encoding 'one-hot' in module 'bram_rd'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1161.902 ; gain = 397.172
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 6     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module bram_rd 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 4     
+Module pl_bram_rd_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3917] design system_pl_bram_rd_0_1 has port ram_rst driven by constant 0
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[31]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[30]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[29]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[28]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[27]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[26]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[25]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[24]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[23]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[22]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[21]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[20]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[19]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[18]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[17]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[16]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[15]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[14]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[13]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[12]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[11]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[10]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[9]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[8]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[7]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[6]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[5]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[4]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[3]
+WARNING: [Synth 8-3331] design system_pl_bram_rd_0_1 has unconnected port ram_wr_data[2]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'inst/pl_bram_rd_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/pl_bram_rd_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/pl_bram_rd_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/pl_bram_rd_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/pl_bram_rd_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/pl_bram_rd_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/pl_bram_rd_v1_0_S00_AXI_inst/u_bram_rd/ram_we_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/pl_bram_rd_v1_0_S00_AXI_inst/u_bram_rd/ram_we_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/pl_bram_rd_v1_0_S00_AXI_inst/u_bram_rd/ram_we_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/pl_bram_rd_v1_0_S00_AXI_inst/u_bram_rd/ram_we_reg[3] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1161.902 ; gain = 397.172
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1161.902 ; gain = 397.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1161.902 ; gain = 397.172
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1174.496 ; gain = 409.766
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.344 ; gain = 415.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.344 ; gain = 415.613
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.344 ; gain = 415.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.344 ; gain = 415.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.344 ; gain = 415.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.344 ; gain = 415.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    27|
+|2     |LUT1   |    32|
+|3     |LUT2   |    33|
+|4     |LUT3   |     1|
+|5     |LUT4   |    55|
+|6     |LUT6   |    51|
+|7     |FDCE   |    37|
+|8     |FDPE   |     1|
+|9     |FDRE   |   169|
+|10    |FDSE   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------------------------------+------------------------+------+
+|      |Instance                         |Module                  |Cells |
++------+---------------------------------+------------------------+------+
+|1     |top                              |                        |   407|
+|2     |  inst                           |pl_bram_rd_v1_0         |   407|
+|3     |    pl_bram_rd_v1_0_S00_AXI_inst |pl_bram_rd_v1_0_S00_AXI |   407|
+|4     |      u_bram_rd                  |bram_rd                 |   177|
++------+---------------------------------+------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.344 ; gain = 415.613
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 70 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1180.344 ; gain = 330.180
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.344 ; gain = 415.613
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1180.344 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 27 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1187.738 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1187.738 ; gain = 717.910
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1187.738 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.runs/system_pl_bram_rd_0_1_synth_1/system_pl_bram_rd_0_1.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_pl_bram_rd_0_1, cache-ID = 2dcbd89a6bc04bdd
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1187.738 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/fpga/Embedded_Vitis/ps_pl_bram/ps_pl_bram.runs/system_pl_bram_rd_0_1_synth_1/system_pl_bram_rd_0_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_pl_bram_rd_0_1_utilization_synth.rpt -pb system_pl_bram_rd_0_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 29 21:32:39 2025...
