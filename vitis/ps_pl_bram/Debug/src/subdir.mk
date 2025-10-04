@@ -7,13 +7,52 @@ LD_SRCS += \
 ../src/lscript.ld 
 
 C_SRCS += \
-../src/main.c 
+../src/address.c \
+../src/fips202.c \
+../src/fors.c \
+../src/hash_shake.c \
+../src/main.c \
+../src/merkle.c \
+../src/platform.c \
+../src/randombytes.c \
+../src/sign.c \
+../src/thash_shake_robust.c \
+../src/utils.c \
+../src/utilsx1.c \
+../src/wots.c \
+../src/wotsx1.c 
 
 OBJS += \
-./src/main.o 
+./src/address.o \
+./src/fips202.o \
+./src/fors.o \
+./src/hash_shake.o \
+./src/main.o \
+./src/merkle.o \
+./src/platform.o \
+./src/randombytes.o \
+./src/sign.o \
+./src/thash_shake_robust.o \
+./src/utils.o \
+./src/utilsx1.o \
+./src/wots.o \
+./src/wotsx1.o 
 
 C_DEPS += \
-./src/main.d 
+./src/address.d \
+./src/fips202.d \
+./src/fors.d \
+./src/hash_shake.d \
+./src/main.d \
+./src/merkle.d \
+./src/platform.d \
+./src/randombytes.d \
+./src/sign.d \
+./src/thash_shake_robust.d \
+./src/utils.d \
+./src/utilsx1.d \
+./src/wots.d \
+./src/wotsx1.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

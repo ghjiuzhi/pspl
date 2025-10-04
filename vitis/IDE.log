@@ -108,3 +108,21 @@ con
 
 22:38:36 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
 23:40:24 INFO  : Disconnected from the channel tcfchan#1.
+13:50:35 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\temp_xsdb_launch_script.tcl
+13:50:42 INFO  : Registering command handlers for Vitis TCF services
+13:50:43 INFO  : XSCT server has started successfully.
+13:50:52 INFO  : plnx-install-location is set to ''
+13:50:52 INFO  : Successfully done setting XSCT server connection channel  
+13:50:52 INFO  : Successfully done query RDI_DATADIR 
+13:50:52 INFO  : Successfully done setting workspace for the tool. 
+14:03:00 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\temp_xsdb_launch_script.tcl
+14:03:03 INFO  : XSCT server has started successfully.
+14:03:03 INFO  : Successfully done setting XSCT server connection channel  
+14:03:03 INFO  : plnx-install-location is set to ''
+14:03:03 INFO  : Successfully done setting workspace for the tool. 
+14:03:08 INFO  : Successfully done query RDI_DATADIR 
+14:03:08 INFO  : Registering command handlers for Vitis TCF services
+16:18:02 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+16:24:13 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+16:39:31 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+16:55:45 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...

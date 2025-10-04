@@ -1,66 +1,103 @@
-
+#include "platform.h"
 #include "xil_printf.h"
-#include "stdio.h"
+#include "xil_io.h"
+#include "xil_cache.h"
+#include <string.h>
+
+// 包含从ps_shake工程复制过来的高层API头文件
+#include "api.h"
+
+// 包含您自定义IP的驱动头文件
 #include "pl_bram_rd.h"
-#include "xbram.h"
 
-#define PL_BRAM_BASE        XPAR_PL_BRAM_RD_0_S00_AXI_BASEADDR   //PL_RAM_RD基地址
-#define PL_BRAM_START       PL_BRAM_RD_S00_AXI_SLV_REG0_OFFSET   //RAM读开始寄存器地址
-#define PL_BRAM_START_ADDR  PL_BRAM_RD_S00_AXI_SLV_REG1_OFFSET   //RAM起始寄存器地址
-#define PL_BRAM_LEN         PL_BRAM_RD_S00_AXI_SLV_REG2_OFFSET   //PL读RAM的深度
+// 定义硬件地址 (这些应该来自 xparameters.h)
+#define BRAM_BASE_ADDR      XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR
+#define PL_IP_BASE          XPAR_PL_BRAM_RD_0_S00_AXI_BASEADDR
 
-#define START_ADDR          0  //RAM起始地址 范围:0~1023
-#define BRAM_DATA_BYTE      4  //BRAM数据字节个数
+// 声明在 fips202.c 中定义的全局变量，用于从底层获取数据
+extern uint8_t shake_input_state_to_pl[200];
 
-char ch_data[1024];            //写入BRAM的字符数组
-int ch_data_len;               //写入BRAM的字符个数
+/**
+ * @brief 一个通用的函数，用于将任意数据和长度发送到PL的BRAM并验证。
+ * @param input_data 指向要发送数据的指针。
+ * @param input_len  要发送的数据长度（字节），这是一个变量。
+ * @param output_len 期望从PL返回的数据长度（字节），这也是一个变量。
+ * @return int - 0 表示成功, -1 表示失败。
+ */
+int send_and_verify_data(uint8_t* input_data, int input_len, int output_len)
+{
+    xil_printf("\r\n--- 开始执行通用数据传输任务 ---\r\n");
+    xil_printf("PS端任务：发送可变长度数据\r\n");
+    xil_printf("   - 输入数据长度 (变量): %d 字节\r\n", input_len);
+    xil_printf("   - 期望输出长度 (变量): %d 字节\r\n", output_len);
 
-//函数声明
-void str_wr_bram();
-void str_rd_bram();
+    // --- 步骤 A: 将长度变量写入PL的寄存器 ---
+    xil_printf("   - 步骤 A: 正在将长度变量写入PL的控制寄存器...\r\n");
+    PL_BRAM_RD_mWriteReg(PL_IP_BASE, 0, input_len);    // 写入输入长度到reg0
+    PL_BRAM_RD_mWriteReg(PL_IP_BASE, 4, output_len);   // 写入输出长度到reg1
 
-//main函数
+    // --- 步骤 B: 将指定长度的数据写入BRAM ---
+    xil_printf("   - 步骤 B: 正在将 %d 字节的数据写入BRAM...\r\n", input_len);
+    for (int i = 0; i < input_len; i++) {
+        Xil_Out8(BRAM_BASE_ADDR + i, input_data[i]);
+    }
+    xil_printf("   - 数据写入完成。\r\n");
+
+    // --- 步骤 C: 读回数据并验证通路是否正确 ---
+    uint8_t read_back_buffer[input_len]; // 创建一个大小可变的缓冲区
+    xil_printf("   - 步骤 C: 正在从BRAM读回数据以验证数据通路...\r\n");
+    for (int i = 0; i < input_len; i++) {
+        read_back_buffer[i] = Xil_In8(BRAM_BASE_ADDR + i);
+    }
+
+    if (memcmp(input_data, read_back_buffer, input_len) == 0) {
+        xil_printf("--- 验证成功: 写入BRAM的数据与读回的数据完全一致！ ---\r\n");
+        return 0; // 成功
+    } else {
+        xil_printf("--- 验证失败: 数据不匹配！请检查硬件或ILA。 ---\r\n");
+        return -1; // 失败
+    }
+}
+
 int main()
 {
-    while(1)
-    {
-        printf("Please enter data to read and write BRAM\n") ;
-        scanf("%1024s", ch_data);        //用户输入字符串
-        ch_data_len = strlen(ch_data);   //计算字符串的长度
+    init_platform();
+    Xil_DCacheDisable();
 
-        str_wr_bram();                   //将用户输入的字符串写入BRAM中
-        str_rd_bram();                   //从BRAM中读出数据
-    }
-}
+    xil_printf("===== PS-PL 通用数据通路验证程序 =====\r\n");
+    xil_printf("本程序将演示如何发送任意长度的数据到PL。\r\n");
 
-//将字符串写入BRAM
-void str_wr_bram()
-{
-    int i=0,wr_cnt = 0;
-    //每次循环向BRAM中写入1个字符
-    for(i = BRAM_DATA_BYTE*START_ADDR ; i < BRAM_DATA_BYTE*(START_ADDR + ch_data_len) ;
-            i += BRAM_DATA_BYTE){
-        XBram_WriteReg(XPAR_BRAM_0_BASEADDR,i,ch_data[wr_cnt]) ;
-        wr_cnt++;
-    }
-    //设置BRAM写入的字符串长度
-    PL_BRAM_RD_mWriteReg(PL_BRAM_BASE, PL_BRAM_LEN , BRAM_DATA_BYTE*ch_data_len) ;
-    //设置BRAM的起始地址
-    PL_BRAM_RD_mWriteReg(PL_BRAM_BASE, PL_BRAM_START_ADDR, BRAM_DATA_BYTE*START_ADDR) ;
-    //拉高BRAM开始信号
-    PL_BRAM_RD_mWriteReg(PL_BRAM_BASE, PL_BRAM_START , 1) ;
-    //拉低BRAM开始信号
-    PL_BRAM_RD_mWriteReg(PL_BRAM_BASE, PL_BRAM_START , 0) ;
-}
+    // =================================================================
+    // 案例1：发送从SHAKE函数拦截的1600位(200字节)数据
+    // =================================================================
+    unsigned char pk[CRYPTO_PUBLICKEYBYTES];
+    unsigned char sk[CRYPTO_SECRETKEYBYTES];
 
-//从BRAM中读出数据
-void str_rd_bram()
-{
-    int read_data=0,i=0;
-    //循环从BRAM中读出数据
-    for(i = BRAM_DATA_BYTE*START_ADDR ; i < BRAM_DATA_BYTE*(START_ADDR + ch_data_len) ;
-            i += BRAM_DATA_BYTE){
-        read_data = XBram_ReadReg(XPAR_BRAM_0_BASEADDR,i) ;
-        printf("BRAM address is %d\t,Read data is %c\n",i/BRAM_DATA_BYTE ,read_data) ;
+    // 1. 调用一个高层函数，这将触发我们在fips202.c中设置的拦截点
+    crypto_sign_keypair(pk, sk);
+    xil_printf("已从SHAKE核心函数中成功捕获1600位State数据。\r\n");
+
+    // 2. 使用我们的通用函数来发送这批特定的数据。
+    //    注意这里我们传入的是变量，而不是固定的数字。
+    send_and_verify_data(shake_input_state_to_pl, 200, 32);
+
+    // =================================================================
+    // 案例2：(为了证明灵活性) 发送一批自定义长度的数据
+    // =================================================================
+
+    // 1. 准备一批新的、不同长度的数据
+    #define CUSTOM_DATA_LEN 50
+    uint8_t my_custom_data[CUSTOM_DATA_LEN];
+    for (int i = 0; i < CUSTOM_DATA_LEN; i++) {
+        my_custom_data[i] = 255 - i; // 填充一些和案例1不同的数据
     }
+
+    // 2. 再次调用同一个通用函数，但这次传入的是自定义的数据和长度
+    send_and_verify_data(my_custom_data, CUSTOM_DATA_LEN, 16);
+
+    xil_printf("\r\n所有测试完成。PS的任务已圆满完成。\r\n");
+    xil_printf("接下来，请在Vivado中检查ILA的波形以完成硬件验证。\r\n");
+
+    cleanup_platform();
+    return 0;
 }
