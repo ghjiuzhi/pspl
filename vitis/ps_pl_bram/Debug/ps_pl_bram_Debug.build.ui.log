@@ -1,14 +1,9 @@
-2025-10-04T19:50:54.549507200255-19:50:54 **** Build of configuration Debug for project ps_pl_bram ****
+2025-10-05T17:30:16.954598300255-17:30:16 **** Incremental Build of configuration Debug for project ps_pl_bram ****
 000-make all 
 000-D:/ruanjian/Vivado/Vitis/2019.2/gnuwin/bin/make --no-print-directory pre-build
 000-a9-linaro-pre-build-step
 000- 
 000-D:/ruanjian/Vivado/Vitis/2019.2/gnuwin/bin/make --no-print-directory main-build
-000-Building file: ../src/fors.c
-000-Invoking: ARM v7 gcc compiler
-000-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/fors.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/fors.d" -MT"src/fors.o" -o "src/fors.o" "../src/fors.c"
-000-Finished building: ../src/fors.c
-000- 
 000-Building file: ../src/main.c
 000-Invoking: ARM v7 gcc compiler
 000-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
@@ -25,11 +20,6 @@
 000- 
 000-Finished building: ../src/main.c
 000- 
-000-Building file: ../src/platform.c
-000-Invoking: ARM v7 gcc compiler
-000-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-000-Finished building: ../src/platform.c
-000- 
 000-Building target: ps_pl_bram.elf
 000-Invoking: ARM v7 gcc linker
 000-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bsplib/lib -o "ps_pl_bram.elf"  ./src/address.o ./src/fips202.o ./src/fors.o ./src/hash_shake.o ./src/main.o ./src/merkle.o ./src/platform.o ./src/randombytes.o ./src/sign.o ./src/thash_shake_robust.o ./src/utils.o ./src/utilsx1.o ./src/wots.o ./src/wotsx1.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
@@ -38,9 +28,9 @@
 000-Invoking: ARM v7 Print Size
 000-arm-none-eabi-size ps_pl_bram.elf  |tee "ps_pl_bram.elf.size"
 000-   text	   data	    bss	    dec	    hex	filename
-000-  64768	   1544	  23464	  89776	  15eb0	ps_pl_bram.elf
+000-  65708	   1544	  23464	  90716	  1625c	ps_pl_bram.elf
 000-Finished building: ps_pl_bram.elf.size
 000- 
 00255-
-19:51:01 Build Finished (took 6s.754ms)
+17:30:18 Build Finished (took 1s.141ms)
 

@@ -1,0 +1,152 @@
+#include "platform.h"
+#include "xil_printf.h"
+#include "xil_io.h"
+#include "xil_cache.h"
+#include <string.h>
+
+// 包含从ps_shake工程复制过来的高层API头文件
+#include "api.h"
+
+// 包含您自定义IP的驱动头文件
+#include "pl_bram_rd.h"
+
+// 定义硬件地址 (这些应该来自 xparameters.h)
+#define BRAM_BASE_ADDR      XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR
+#define PL_IP_BASE          XPAR_PL_BRAM_RD_0_S00_AXI_BASEADDR
+
+// 声明在 fips202.c 中定义的全局变量
+extern uint8_t shake_input_state_to_pl[200];
+
+/**
+ * @brief 格式化打印一个数据缓冲区的内容。
+ */
+void print_data(const char* title, const uint8_t* data, int len)
+{
+    xil_printf("%s (%d bytes):\r\n", title, len);
+    for (int i = 0; i < len; i++) {
+        xil_printf("%02X ", data[i]);
+        if ((i + 1) % 16 == 0) {
+            xil_printf("\r\n");
+        }
+    }
+    xil_printf("\r\n");
+}
+
+/**
+ * @brief 一个通用的、带有详细验证和打印功能的函数。
+ */
+int send_and_verify_data(uint8_t* input_data, int input_len, int output_len)
+{
+    int status = 0;
+    int timeout = 10000;
+
+    xil_printf("\r\n--- 开始执行通用数据传输任务 ---\r\n");
+    xil_printf("PS端任务：发送可变长度数据\r\n");
+    xil_printf("   - 输入数据长度 (变量): %d 字节\r\n", input_len);
+    xil_printf("   - 期望输出长度 (变量): %d 字节\r\n", output_len);
+
+    // --- 步骤 A: 将长度变量写入PL的寄存器并验证 ---
+    xil_printf("   - 步骤 A: 正在将长度变量写入PL的控制寄存器...\r\n");
+
+    // ==================== 关键修改点 ====================
+    // 硬件的计数器以字(Word)为单位，而我们的长度是字节(Byte)。
+    // 所以，我们需要将字节长度转换为硬件能理解的读取次数（字数）。
+    int len_for_pl = (input_len + 3) / 4; // 向上取整，确保所有字节都被读取
+    PL_BRAM_RD_mWriteReg(PL_IP_BASE, 0, len_for_pl); // 写入的是转换后的字数
+    // ====================================================
+
+    PL_BRAM_RD_mWriteReg(PL_IP_BASE, 4, output_len);   // 输出长度通常由硬件内部逻辑决定，这里照常写入
+
+    int read_input_len = PL_BRAM_RD_mReadReg(PL_IP_BASE, 0);
+
+    if (read_input_len == len_for_pl) {
+        xil_printf("     [成功] 寄存器回读验证通过。已告知PL需要读取 %d 个字。\r\n", len_for_pl);
+    } else {
+        xil_printf("     [失败] 寄存器回读验证失败！\r\n");
+        return -1;
+    }
+
+    // --- 步骤 B: 将指定长度的数据写入BRAM ---
+    xil_printf("   - 步骤 B: 正在将 %d 字节的数据写入BRAM...\r\n", input_len);
+    for (int i = 0; i < input_len; i++) {
+        Xil_Out8(BRAM_BASE_ADDR + i, input_data[i]);
+    }
+    // 为了处理非4字节对齐的情况，将多余部分清零，避免PL读到垃圾数据
+    int padded_len = len_for_pl * 4;
+    for (int i = input_len; i < padded_len; i++) {
+        Xil_Out8(BRAM_BASE_ADDR + i, 0);
+    }
+    xil_printf("   - 数据写入完成。\r\n");
+
+    print_data("   - 原始输入数据 (最多打印前32字节)", input_data, input_len > 32 ? 32 : input_len);
+
+    // --- 步骤 C: 启动PL并等待其完成 ---
+    xil_printf("   - 步骤 C: 正在启动PL硬件并等待其完成...\r\n");
+    PL_BRAM_RD_mWriteReg(PL_IP_BASE, 8, 1);
+
+    while (PL_BRAM_RD_mReadReg(PL_IP_BASE, 12) == 0 && timeout > 0) {
+        timeout--;
+    }
+
+    if (timeout == 0) {
+        xil_printf("     [失败] 等待PL完成超时！硬件逻辑可能仍有问题。\r\n");
+        return -1;
+    } else {
+        xil_printf("     [成功] PL处理完成信号已收到。\r\n");
+    }
+
+    // --- 步骤 D: 读回数据并验证通路是否正确 ---
+    uint8_t read_back_buffer[input_len];
+    xil_printf("   - 步骤 D: 正在从BRAM读回数据以验证数据通路...\r\n");
+    for (int i = 0; i < input_len; i++) {
+        read_back_buffer[i] = Xil_In8(BRAM_BASE_ADDR + i);
+    }
+
+    print_data("   - 从BRAM读回的数据 (最多打印前32字节)", read_back_buffer, input_len > 32 ? 32 : input_len);
+
+    if (memcmp(input_data, read_back_buffer, input_len) == 0) {
+        xil_printf("--- [最终验证成功]: 原始数据与BRAM读回的数据完全一致！ ---\r\n");
+        status = 0;
+    } else {
+        xil_printf("--- [最终验证失败]: 数据不匹配！ ---\r\n");
+        for (int i = 0; i < input_len; i++) {
+            if (input_data[i] != read_back_buffer[i]) {
+                xil_printf("     在字节 %d 处首次发现不匹配: 期望值 = 0x%02X, 实际读到 = 0x%02X\r\n",
+                           i, input_data[i], read_back_buffer[i]);
+                break;
+            }
+        }
+        status = -1;
+    }
+
+    return status;
+}
+
+int main()
+{
+    init_platform();
+    Xil_DCacheDisable();
+
+    xil_printf("===== PS-PL 通用数据通路验证程序 (增强版) =====\r\n");
+    xil_printf("本程序将演示如何发送任意长度的数据到PL，并提供详细的验证步骤。\r\n");
+
+    unsigned char pk[CRYPTO_PUBLICKEYBYTES];
+    unsigned char sk[CRYPTO_SECRETKEYBYTES];
+
+    crypto_sign_keypair(pk, sk);
+    xil_printf("\n已从SHAKE核心函数中成功捕获1600位State数据。\r\n");
+    send_and_verify_data(shake_input_state_to_pl, 200, 32);
+
+    #define CUSTOM_DATA_LEN 50
+    uint8_t my_custom_data[CUSTOM_DATA_LEN];
+    for (int i = 0; i < CUSTOM_DATA_LEN; i++) {
+        my_custom_data[i] = 255 - i;
+    }
+    send_and_verify_data(my_custom_data, CUSTOM_DATA_LEN, 16);
+
+    xil_printf("\r\n所有测试完成。PS的任务已圆满完成。\r\n");
+    xil_printf("接下来，请在Vivado中检查ILA的波形以完成硬件验证。\r\n");
+
+    cleanup_platform();
+    return 0;
+}
