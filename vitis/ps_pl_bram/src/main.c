@@ -3,6 +3,7 @@
 #include "xil_io.h"
 #include "xil_cache.h"
 #include <string.h>
+#include "sleep.h" // <--- 新增的头文件
 
 // 包含从ps_shake工程复制过来的高层API头文件
 #include "api.h"
@@ -36,7 +37,7 @@ void print_data(const char* title, const uint8_t* data, int len)
 }
 
 /**
- * @brief 一个通用的、带有详细验证和打印功能的函数。(最终修正版)
+ * @brief 一个通用的、带有详细验证和打印功能的函数。(已修正时序问题)
  * @param input_data 指向要发送数据的指针。
  * @param input_len  要发送的数据长度（字节）。
  * @param output_len 期望从PL返回的数据长度（字节）。
@@ -76,10 +77,13 @@ int send_and_verify_data(uint8_t* input_data, int input_len, int output_len)
 
     // --- 步骤 C: 启动PL硬件 (不等待完成信号) ---
     xil_printf("    - 步骤 C: 正在通过脉冲信号启动PL硬件...\r\n");
-    // **修正**: 产生一个上升沿脉冲来触发硬件的边沿检测逻辑
-    PL_BRAM_RD_mWriteReg(PL_IP_BASE, 0, 1); // 拉高 slv_reg0[0]
-    PL_BRAM_RD_mWriteReg(PL_IP_BASE, 0, 0); // 立即拉低 slv_reg0[0]
-    xil_printf("      [成功] PL硬件已触发。注意：本设计不返回完成信号，需使用ILA验证。\r\n");
+
+    // **最终修正**: 产生一个足够宽的上升沿脉冲来触发硬件的边沿检测逻辑
+    PL_BRAM_RD_mWriteReg(PL_IP_BASE, 8, 1); // 拉高 start_rd
+    usleep(1);                             // **加入1微秒延时，确保PL能捕捉到信号**
+    PL_BRAM_RD_mWriteReg(PL_IP_BASE, 8, 0); // 拉低 start_rd
+
+    xil_printf("      [成功] PL硬件已触发。现在请在Vivado中检查ILA波形。\r\n");
 
 
     // --- 步骤 D: 读回数据并验证通路是否正确 ---

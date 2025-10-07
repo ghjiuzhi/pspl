@@ -11,6 +11,8 @@ src/main.o src/main.o: ../src/main.c ../src/platform.h \
  D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xreg_cortexa9.h \
  D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xpseudo_asm_gcc.h \
  D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xil_cache.h \
+ D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/sleep.h \
+ D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xil_io.h \
  ../src/api.h ../src/params.h ../src/params/params-sphincs-shake-128f.h \
  ../src/params/../shake_offsets.h \
  D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/pl_bram_rd.h \
@@ -42,6 +44,10 @@ D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/
 D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xpseudo_asm_gcc.h:
 
 D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xil_cache.h:
+
+D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/sleep.h:
+
+D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xil_io.h:
 
 ../src/api.h:
 

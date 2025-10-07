@@ -134,3 +134,1773 @@ con
 19:48:57 INFO  : Successfully done query RDI_DATADIR 
 19:48:57 INFO  : Successfully done setting workspace for the tool. 
 19:50:52 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+10:15:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:15:31 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+10:15:31 INFO  : 'jtag frequency' command is executed.
+10:15:31 INFO  : Context for 'APU' is selected.
+10:15:31 INFO  : System reset is completed.
+10:15:34 INFO  : 'after 3000' command is executed.
+10:15:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+10:15:37 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+10:15:38 INFO  : Context for 'APU' is selected.
+10:15:38 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+10:15:38 INFO  : 'configparams force-mem-access 1' command is executed.
+10:15:38 INFO  : Context for 'APU' is selected.
+10:15:38 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+10:15:38 INFO  : 'ps7_init' command is executed.
+10:15:38 INFO  : 'ps7_post_config' command is executed.
+10:15:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:15:39 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:15:39 INFO  : 'configparams force-mem-access 0' command is executed.
+10:15:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:15:39 INFO  : Memory regions updated for context APU
+10:15:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:15:39 INFO  : 'con' command is executed.
+10:15:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:15:39 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+10:58:43 WARN  : channel "tcfchan#2" closed
+12:49:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:49:50 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+12:49:50 INFO  : 'jtag frequency' command is executed.
+12:49:50 INFO  : Context for 'APU' is selected.
+12:49:51 INFO  : System reset is completed.
+12:49:54 INFO  : 'after 3000' command is executed.
+12:49:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+12:49:57 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+12:49:57 INFO  : Context for 'APU' is selected.
+12:49:57 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+12:49:57 INFO  : 'configparams force-mem-access 1' command is executed.
+12:49:57 INFO  : Context for 'APU' is selected.
+12:49:57 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+12:49:58 INFO  : 'ps7_init' command is executed.
+12:49:58 INFO  : 'ps7_post_config' command is executed.
+12:49:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:49:58 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:49:59 INFO  : 'configparams force-mem-access 0' command is executed.
+12:49:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:49:59 INFO  : Memory regions updated for context APU
+12:49:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:49:59 INFO  : 'con' command is executed.
+12:49:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:49:59 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+13:02:52 INFO  : Disconnected from the channel tcfchan#3.
+13:02:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:02:53 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+13:02:53 INFO  : 'jtag frequency' command is executed.
+13:02:53 INFO  : Context for 'APU' is selected.
+13:02:53 INFO  : System reset is completed.
+13:02:56 INFO  : 'after 3000' command is executed.
+13:02:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+13:02:59 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+13:03:00 INFO  : Context for 'APU' is selected.
+13:03:00 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+13:03:00 INFO  : 'configparams force-mem-access 1' command is executed.
+13:03:00 INFO  : Context for 'APU' is selected.
+13:03:00 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+13:03:00 INFO  : 'ps7_init' command is executed.
+13:03:00 INFO  : 'ps7_post_config' command is executed.
+13:03:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:03:01 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:03:01 INFO  : 'configparams force-mem-access 0' command is executed.
+13:03:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:03:01 INFO  : Memory regions updated for context APU
+13:03:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:03:01 INFO  : 'con' command is executed.
+13:03:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:03:01 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+15:41:55 INFO  : Disconnected from the channel tcfchan#4.
+15:41:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:41:57 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+15:41:57 INFO  : 'jtag frequency' command is executed.
+15:41:57 INFO  : Context for 'APU' is selected.
+15:41:57 INFO  : System reset is completed.
+15:42:00 INFO  : 'after 3000' command is executed.
+15:42:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+15:42:03 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+15:42:03 INFO  : Context for 'APU' is selected.
+15:42:03 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+15:42:03 INFO  : 'configparams force-mem-access 1' command is executed.
+15:42:03 INFO  : Context for 'APU' is selected.
+15:42:03 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+15:42:04 INFO  : 'ps7_init' command is executed.
+15:42:04 INFO  : 'ps7_post_config' command is executed.
+15:42:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:42:04 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:42:04 INFO  : 'configparams force-mem-access 0' command is executed.
+15:42:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:42:04 INFO  : Memory regions updated for context APU
+15:42:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:42:05 INFO  : 'con' command is executed.
+15:42:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:42:05 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+16:07:16 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+17:01:45 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+17:01:53 INFO  : Disconnected from the channel tcfchan#5.
+17:01:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:01:54 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+17:01:54 INFO  : 'jtag frequency' command is executed.
+17:01:54 INFO  : Context for 'APU' is selected.
+17:01:54 INFO  : System reset is completed.
+17:01:57 INFO  : 'after 3000' command is executed.
+17:01:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+17:02:01 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+17:02:01 INFO  : Context for 'APU' is selected.
+17:02:01 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+17:02:01 INFO  : 'configparams force-mem-access 1' command is executed.
+17:02:01 INFO  : Context for 'APU' is selected.
+17:02:01 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+17:02:01 INFO  : 'ps7_init' command is executed.
+17:02:01 INFO  : 'ps7_post_config' command is executed.
+17:02:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:02:02 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:02:02 INFO  : 'configparams force-mem-access 0' command is executed.
+17:02:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:02:02 INFO  : Memory regions updated for context APU
+17:02:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:02:02 INFO  : 'con' command is executed.
+17:02:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:02:02 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+17:03:20 INFO  : Disconnected from the channel tcfchan#6.
+17:03:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:03:21 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+17:03:21 INFO  : 'jtag frequency' command is executed.
+17:03:21 INFO  : Context for 'APU' is selected.
+17:03:21 INFO  : System reset is completed.
+17:03:24 INFO  : 'after 3000' command is executed.
+17:03:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+17:03:28 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+17:03:28 INFO  : Context for 'APU' is selected.
+17:03:28 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+17:03:28 INFO  : 'configparams force-mem-access 1' command is executed.
+17:03:28 INFO  : Context for 'APU' is selected.
+17:03:28 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+17:03:28 INFO  : 'ps7_init' command is executed.
+17:03:28 INFO  : 'ps7_post_config' command is executed.
+17:03:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:03:29 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:03:29 INFO  : 'configparams force-mem-access 0' command is executed.
+17:03:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:03:29 INFO  : Memory regions updated for context APU
+17:03:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:03:29 INFO  : 'con' command is executed.
+17:03:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:03:29 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+17:16:58 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+17:17:30 INFO  : Disconnected from the channel tcfchan#7.
+17:17:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:17:31 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+17:17:31 INFO  : 'jtag frequency' command is executed.
+17:17:31 INFO  : Context for 'APU' is selected.
+17:17:32 INFO  : System reset is completed.
+17:17:35 INFO  : 'after 3000' command is executed.
+17:17:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+17:17:38 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+17:17:38 INFO  : Context for 'APU' is selected.
+17:17:38 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+17:17:38 INFO  : 'configparams force-mem-access 1' command is executed.
+17:17:38 INFO  : Context for 'APU' is selected.
+17:17:38 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+17:17:39 INFO  : 'ps7_init' command is executed.
+17:17:39 INFO  : 'ps7_post_config' command is executed.
+17:17:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:17:39 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:17:39 INFO  : 'configparams force-mem-access 0' command is executed.
+17:17:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:17:39 INFO  : Memory regions updated for context APU
+17:17:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:17:39 INFO  : 'con' command is executed.
+17:17:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:17:39 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+17:30:16 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+17:30:24 INFO  : Disconnected from the channel tcfchan#8.
+17:30:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:30:25 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+17:30:25 INFO  : 'jtag frequency' command is executed.
+17:30:25 INFO  : Context for 'APU' is selected.
+17:30:25 INFO  : System reset is completed.
+17:30:28 INFO  : 'after 3000' command is executed.
+17:30:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+17:30:32 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+17:30:32 INFO  : Context for 'APU' is selected.
+17:30:32 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+17:30:32 INFO  : 'configparams force-mem-access 1' command is executed.
+17:30:32 INFO  : Context for 'APU' is selected.
+17:30:32 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+17:30:32 INFO  : 'ps7_init' command is executed.
+17:30:32 INFO  : 'ps7_post_config' command is executed.
+17:30:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:30:32 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:30:32 INFO  : 'configparams force-mem-access 0' command is executed.
+17:30:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:30:33 INFO  : Memory regions updated for context APU
+17:30:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:30:33 INFO  : 'con' command is executed.
+17:30:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:30:33 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+18:53:31 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+18:53:49 INFO  : Disconnected from the channel tcfchan#9.
+18:53:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:53:50 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+18:53:50 INFO  : 'jtag frequency' command is executed.
+18:53:50 INFO  : Context for 'APU' is selected.
+18:53:50 INFO  : System reset is completed.
+18:53:53 INFO  : 'after 3000' command is executed.
+18:53:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+18:53:57 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+18:53:57 INFO  : Context for 'APU' is selected.
+18:53:57 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+18:53:57 INFO  : 'configparams force-mem-access 1' command is executed.
+18:53:57 INFO  : Context for 'APU' is selected.
+18:53:57 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+18:53:57 INFO  : 'ps7_init' command is executed.
+18:53:57 INFO  : 'ps7_post_config' command is executed.
+18:53:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:58 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:53:58 INFO  : 'configparams force-mem-access 0' command is executed.
+18:53:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:53:58 INFO  : Memory regions updated for context APU
+18:53:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:58 INFO  : 'con' command is executed.
+18:53:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:53:58 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+19:07:12 INFO  : Disconnected from the channel tcfchan#10.
+19:07:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:07:14 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+19:07:14 INFO  : 'jtag frequency' command is executed.
+19:07:14 INFO  : Context for 'APU' is selected.
+19:07:14 INFO  : System reset is completed.
+19:07:17 INFO  : 'after 3000' command is executed.
+19:07:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+19:07:20 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+19:07:20 INFO  : Context for 'APU' is selected.
+19:07:20 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+19:07:20 INFO  : 'configparams force-mem-access 1' command is executed.
+19:07:20 INFO  : Context for 'APU' is selected.
+19:07:20 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+19:07:21 INFO  : 'ps7_init' command is executed.
+19:07:21 INFO  : 'ps7_post_config' command is executed.
+19:07:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:07:21 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:07:21 INFO  : 'configparams force-mem-access 0' command is executed.
+19:07:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:07:21 INFO  : Memory regions updated for context APU
+19:07:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:07:21 INFO  : 'con' command is executed.
+19:07:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:07:21 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+19:21:56 INFO  : Disconnected from the channel tcfchan#11.
+19:21:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:21:57 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+19:21:57 INFO  : 'jtag frequency' command is executed.
+19:21:57 INFO  : Context for 'APU' is selected.
+19:21:57 INFO  : System reset is completed.
+19:22:00 INFO  : 'after 3000' command is executed.
+19:22:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+19:22:04 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+19:22:04 INFO  : Context for 'APU' is selected.
+19:22:04 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+19:22:04 INFO  : 'configparams force-mem-access 1' command is executed.
+19:22:04 INFO  : Context for 'APU' is selected.
+19:22:04 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+19:22:04 INFO  : 'ps7_init' command is executed.
+19:22:04 INFO  : 'ps7_post_config' command is executed.
+19:22:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:22:05 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:22:05 INFO  : 'configparams force-mem-access 0' command is executed.
+19:22:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:22:05 INFO  : Memory regions updated for context APU
+19:22:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:22:05 INFO  : 'con' command is executed.
+19:22:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:22:05 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+20:36:03 INFO  : Disconnected from the channel tcfchan#12.
+20:36:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:36:04 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+20:36:04 INFO  : 'jtag frequency' command is executed.
+20:36:04 INFO  : Context for 'APU' is selected.
+20:36:04 INFO  : System reset is completed.
+20:36:07 INFO  : 'after 3000' command is executed.
+20:36:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+20:37:13 ERROR : 'fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit' is cancelled.
+20:37:13 ERROR : Exception occured while running Program FPGA.
+java.lang.RuntimeException: 'fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit' is cancelled.
+20:37:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+----------------End of Script----------------
+
+20:37:13 ERROR : 'fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit' is cancelled.
+20:40:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:40:27 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+20:40:27 INFO  : 'jtag frequency' command is executed.
+20:40:27 INFO  : Context for 'APU' is selected.
+20:40:28 INFO  : System reset is completed.
+20:40:31 INFO  : 'after 3000' command is executed.
+20:40:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+20:40:33 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+20:40:33 INFO  : Context for 'APU' is selected.
+20:40:33 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+20:40:33 INFO  : 'configparams force-mem-access 1' command is executed.
+20:40:33 INFO  : Context for 'APU' is selected.
+20:40:33 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+20:40:34 INFO  : 'ps7_init' command is executed.
+20:40:34 INFO  : 'ps7_post_config' command is executed.
+20:40:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:40:34 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:40:34 INFO  : 'configparams force-mem-access 0' command is executed.
+20:40:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:40:34 INFO  : Memory regions updated for context APU
+20:40:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:40:34 INFO  : 'con' command is executed.
+20:40:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:40:34 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+20:40:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:40:35 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+20:40:35 INFO  : 'jtag frequency' command is executed.
+20:40:35 INFO  : Context for 'APU' is selected.
+20:40:35 INFO  : System reset is completed.
+20:40:38 INFO  : 'after 3000' command is executed.
+20:40:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+20:40:41 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+20:40:41 INFO  : Context for 'APU' is selected.
+20:40:41 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+20:40:41 INFO  : 'configparams force-mem-access 1' command is executed.
+20:40:41 INFO  : Context for 'APU' is selected.
+20:40:41 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+20:40:42 INFO  : 'ps7_init' command is executed.
+20:40:42 INFO  : 'ps7_post_config' command is executed.
+20:40:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:40:42 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:40:42 INFO  : 'configparams force-mem-access 0' command is executed.
+20:40:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:40:42 INFO  : Memory regions updated for context APU
+20:40:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:40:42 INFO  : 'con' command is executed.
+20:40:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:40:42 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+21:20:51 INFO  : Disconnected from the channel tcfchan#14.
+21:20:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:20:52 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+21:20:52 INFO  : 'jtag frequency' command is executed.
+21:20:52 INFO  : Context for 'APU' is selected.
+21:20:52 INFO  : System reset is completed.
+21:20:55 INFO  : 'after 3000' command is executed.
+21:20:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+21:20:58 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+21:20:58 INFO  : Context for 'APU' is selected.
+21:20:58 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+21:20:58 INFO  : 'configparams force-mem-access 1' command is executed.
+21:20:58 INFO  : Context for 'APU' is selected.
+21:20:58 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+21:20:58 INFO  : 'ps7_init' command is executed.
+21:20:58 INFO  : 'ps7_post_config' command is executed.
+21:20:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:20:59 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:20:59 INFO  : 'configparams force-mem-access 0' command is executed.
+21:20:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:20:59 INFO  : Memory regions updated for context APU
+21:20:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:20:59 INFO  : 'con' command is executed.
+21:20:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:20:59 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+21:29:28 INFO  : Disconnected from the channel tcfchan#15.
+21:29:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:29:29 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+21:29:29 INFO  : 'jtag frequency' command is executed.
+21:29:29 INFO  : Context for 'APU' is selected.
+21:29:29 INFO  : System reset is completed.
+21:29:32 INFO  : 'after 3000' command is executed.
+21:29:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+21:29:35 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+21:29:35 INFO  : Context for 'APU' is selected.
+21:29:35 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+21:29:35 INFO  : 'configparams force-mem-access 1' command is executed.
+21:29:35 INFO  : Context for 'APU' is selected.
+21:29:35 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+21:29:36 INFO  : 'ps7_init' command is executed.
+21:29:36 INFO  : 'ps7_post_config' command is executed.
+21:29:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:29:36 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:29:36 INFO  : 'configparams force-mem-access 0' command is executed.
+21:29:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:29:36 INFO  : Memory regions updated for context APU
+21:29:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:29:37 INFO  : 'con' command is executed.
+21:29:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:29:37 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+21:40:25 INFO  : Disconnected from the channel tcfchan#16.
+21:40:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:40:26 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+21:40:26 INFO  : 'jtag frequency' command is executed.
+21:40:27 INFO  : Context for 'APU' is selected.
+21:40:27 INFO  : System reset is completed.
+21:40:30 INFO  : 'after 3000' command is executed.
+21:40:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+21:40:32 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+21:40:32 INFO  : Context for 'APU' is selected.
+21:40:32 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+21:40:32 INFO  : 'configparams force-mem-access 1' command is executed.
+21:40:32 INFO  : Context for 'APU' is selected.
+21:40:32 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+21:40:33 INFO  : 'ps7_init' command is executed.
+21:40:33 INFO  : 'ps7_post_config' command is executed.
+21:40:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:33 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:40:33 INFO  : 'configparams force-mem-access 0' command is executed.
+21:40:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:40:33 INFO  : Memory regions updated for context APU
+21:40:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:33 INFO  : 'con' command is executed.
+21:40:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:40:33 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+21:42:35 INFO  : Disconnected from the channel tcfchan#17.
+21:42:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:42:36 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+21:42:36 INFO  : 'jtag frequency' command is executed.
+21:42:37 INFO  : Context for 'APU' is selected.
+21:42:37 INFO  : System reset is completed.
+21:42:40 INFO  : 'after 3000' command is executed.
+21:42:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+21:42:42 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+21:42:42 INFO  : Context for 'APU' is selected.
+21:42:42 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+21:42:42 INFO  : 'configparams force-mem-access 1' command is executed.
+21:42:42 INFO  : Context for 'APU' is selected.
+21:42:42 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+21:42:43 INFO  : 'ps7_init' command is executed.
+21:42:43 INFO  : 'ps7_post_config' command is executed.
+21:42:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:42:43 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:42:43 INFO  : 'configparams force-mem-access 0' command is executed.
+21:42:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:42:43 INFO  : Memory regions updated for context APU
+21:42:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:42:43 INFO  : 'con' command is executed.
+21:42:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:42:43 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+21:43:59 INFO  : Disconnected from the channel tcfchan#18.
+21:44:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:44:01 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+21:44:01 INFO  : 'jtag frequency' command is executed.
+21:44:01 INFO  : Context for 'APU' is selected.
+21:44:01 INFO  : System reset is completed.
+21:44:04 INFO  : 'after 3000' command is executed.
+21:44:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+21:44:07 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+21:44:07 INFO  : Context for 'APU' is selected.
+21:44:07 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+21:44:07 INFO  : 'configparams force-mem-access 1' command is executed.
+21:44:07 INFO  : Context for 'APU' is selected.
+21:44:07 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+21:44:08 INFO  : 'ps7_init' command is executed.
+21:44:08 INFO  : 'ps7_post_config' command is executed.
+21:44:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:09 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:44:09 INFO  : 'configparams force-mem-access 0' command is executed.
+21:44:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:44:09 INFO  : Memory regions updated for context APU
+21:44:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:09 INFO  : 'con' command is executed.
+21:44:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:44:09 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+21:44:31 INFO  : Disconnected from the channel tcfchan#19.
+21:44:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:44:32 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+21:44:32 INFO  : 'jtag frequency' command is executed.
+21:44:32 INFO  : Context for 'APU' is selected.
+21:44:32 INFO  : System reset is completed.
+21:44:35 INFO  : 'after 3000' command is executed.
+21:44:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+21:44:38 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+21:44:38 INFO  : Context for 'APU' is selected.
+21:44:38 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+21:44:38 INFO  : 'configparams force-mem-access 1' command is executed.
+21:44:38 INFO  : Context for 'APU' is selected.
+21:44:38 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+21:44:39 INFO  : 'ps7_init' command is executed.
+21:44:39 INFO  : 'ps7_post_config' command is executed.
+21:44:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:39 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:44:39 INFO  : 'configparams force-mem-access 0' command is executed.
+21:44:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:44:40 INFO  : Memory regions updated for context APU
+21:44:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:44:40 INFO  : 'con' command is executed.
+21:44:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:44:40 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+21:45:28 INFO  : Disconnected from the channel tcfchan#20.
+21:45:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:45:29 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+21:45:29 INFO  : 'jtag frequency' command is executed.
+21:45:29 INFO  : Context for 'APU' is selected.
+21:45:29 INFO  : System reset is completed.
+21:45:32 INFO  : 'after 3000' command is executed.
+21:45:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+21:45:34 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+21:45:34 INFO  : Context for 'APU' is selected.
+21:45:35 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+21:45:35 INFO  : 'configparams force-mem-access 1' command is executed.
+21:45:35 INFO  : Context for 'APU' is selected.
+21:45:35 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+21:45:35 INFO  : 'ps7_init' command is executed.
+21:45:35 INFO  : 'ps7_post_config' command is executed.
+21:45:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:45:35 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:45:35 INFO  : 'configparams force-mem-access 0' command is executed.
+21:45:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:45:35 INFO  : Memory regions updated for context APU
+21:45:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:45:36 INFO  : 'con' command is executed.
+21:45:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:45:36 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+22:29:34 INFO  : Hardware specification for platform project 'system_wrapper' is updated.
+22:30:14 INFO  : Disconnected from the channel tcfchan#21.
+22:30:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:30:16 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+22:30:16 INFO  : 'jtag frequency' command is executed.
+22:30:16 INFO  : Context for 'APU' is selected.
+22:30:16 INFO  : System reset is completed.
+22:30:19 INFO  : 'after 3000' command is executed.
+22:30:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+22:30:21 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+22:30:21 INFO  : Context for 'APU' is selected.
+22:30:21 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+22:30:21 INFO  : 'configparams force-mem-access 1' command is executed.
+22:30:21 INFO  : Context for 'APU' is selected.
+22:30:21 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+22:30:22 INFO  : 'ps7_init' command is executed.
+22:30:22 INFO  : 'ps7_post_config' command is executed.
+22:30:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:30:22 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:30:22 INFO  : 'configparams force-mem-access 0' command is executed.
+22:30:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:30:22 INFO  : Memory regions updated for context APU
+22:30:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:30:22 INFO  : 'con' command is executed.
+22:30:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:30:22 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+22:32:40 INFO  : Disconnected from the channel tcfchan#23.
+22:32:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:32:41 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+22:32:41 INFO  : 'jtag frequency' command is executed.
+22:32:41 INFO  : Context for 'APU' is selected.
+22:32:42 INFO  : System reset is completed.
+22:32:45 INFO  : 'after 3000' command is executed.
+22:32:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+22:32:47 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+22:32:47 INFO  : Context for 'APU' is selected.
+22:32:47 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+22:32:47 INFO  : 'configparams force-mem-access 1' command is executed.
+22:32:47 INFO  : Context for 'APU' is selected.
+22:32:47 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+22:32:48 INFO  : 'ps7_init' command is executed.
+22:32:48 INFO  : 'ps7_post_config' command is executed.
+22:32:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:32:49 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:32:49 INFO  : 'configparams force-mem-access 0' command is executed.
+22:32:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:32:49 INFO  : Memory regions updated for context APU
+22:32:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:32:49 INFO  : 'con' command is executed.
+22:32:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:32:49 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+22:38:42 INFO  : Disconnected from the channel tcfchan#24.
+23:16:49 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\temp_xsdb_launch_script.tcl
+23:16:55 INFO  : XSCT server has started successfully.
+23:16:55 INFO  : Successfully done setting XSCT server connection channel  
+23:16:55 INFO  : plnx-install-location is set to ''
+23:16:55 INFO  : Successfully done setting workspace for the tool. 
+23:17:00 INFO  : Registering command handlers for Vitis TCF services
+23:17:07 INFO  : Successfully done query RDI_DATADIR 
+23:18:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:18:12 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+23:18:12 INFO  : 'jtag frequency' command is executed.
+23:18:12 INFO  : Context for 'APU' is selected.
+23:18:12 INFO  : System reset is completed.
+23:18:15 INFO  : 'after 3000' command is executed.
+23:18:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+23:18:19 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+23:18:19 INFO  : Context for 'APU' is selected.
+23:18:19 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+23:18:19 INFO  : 'configparams force-mem-access 1' command is executed.
+23:18:19 INFO  : Context for 'APU' is selected.
+23:18:19 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+23:18:20 INFO  : 'ps7_init' command is executed.
+23:18:20 INFO  : 'ps7_post_config' command is executed.
+23:18:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:18:20 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:18:20 INFO  : 'configparams force-mem-access 0' command is executed.
+23:18:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:18:20 INFO  : Memory regions updated for context APU
+23:18:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:18:20 INFO  : 'con' command is executed.
+23:18:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:18:20 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+23:18:33 INFO  : Disconnected from the channel tcfchan#1.
+23:18:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:18:35 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+23:18:35 INFO  : 'jtag frequency' command is executed.
+23:18:35 INFO  : Context for 'APU' is selected.
+23:18:35 INFO  : System reset is completed.
+23:18:38 INFO  : 'after 3000' command is executed.
+23:18:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+23:18:41 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+23:18:41 INFO  : Context for 'APU' is selected.
+23:18:42 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+23:18:42 INFO  : 'configparams force-mem-access 1' command is executed.
+23:18:42 INFO  : Context for 'APU' is selected.
+23:18:42 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+23:18:43 INFO  : 'ps7_init' command is executed.
+23:18:43 INFO  : 'ps7_post_config' command is executed.
+23:18:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:18:43 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:18:43 INFO  : 'configparams force-mem-access 0' command is executed.
+23:18:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:18:43 INFO  : Memory regions updated for context APU
+23:18:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:18:44 INFO  : 'con' command is executed.
+23:18:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:18:44 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+23:19:06 INFO  : Disconnected from the channel tcfchan#2.
+23:19:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:19:08 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+23:19:08 INFO  : 'jtag frequency' command is executed.
+23:19:08 INFO  : Context for 'APU' is selected.
+23:19:08 INFO  : System reset is completed.
+23:19:11 INFO  : 'after 3000' command is executed.
+23:19:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+23:19:15 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+23:19:15 INFO  : Context for 'APU' is selected.
+23:19:16 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+23:19:16 INFO  : 'configparams force-mem-access 1' command is executed.
+23:19:16 INFO  : Context for 'APU' is selected.
+23:19:16 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+23:19:16 INFO  : 'ps7_init' command is executed.
+23:19:16 INFO  : 'ps7_post_config' command is executed.
+23:19:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:19:17 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:19:17 INFO  : 'configparams force-mem-access 0' command is executed.
+23:19:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:19:17 INFO  : Memory regions updated for context APU
+23:19:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:19:17 INFO  : 'con' command is executed.
+23:19:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:19:17 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+23:22:39 INFO  : Disconnected from the channel tcfchan#3.
+23:22:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:22:41 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+23:22:41 INFO  : 'jtag frequency' command is executed.
+23:22:41 INFO  : Context for 'APU' is selected.
+23:22:41 INFO  : System reset is completed.
+23:22:44 INFO  : 'after 3000' command is executed.
+23:22:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+23:22:47 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+23:22:48 INFO  : Context for 'APU' is selected.
+23:22:49 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+23:22:49 INFO  : 'configparams force-mem-access 1' command is executed.
+23:22:49 INFO  : Context for 'APU' is selected.
+23:22:49 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+23:22:50 INFO  : 'ps7_init' command is executed.
+23:22:50 INFO  : 'ps7_post_config' command is executed.
+23:22:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:22:50 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:22:50 INFO  : 'configparams force-mem-access 0' command is executed.
+23:22:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:22:50 INFO  : Memory regions updated for context APU
+23:22:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:22:50 INFO  : 'con' command is executed.
+23:22:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:22:50 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+23:53:19 INFO  : Disconnected from the channel tcfchan#4.
+23:53:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:53:20 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+23:53:20 INFO  : 'jtag frequency' command is executed.
+23:53:21 INFO  : Context for 'APU' is selected.
+23:53:21 INFO  : System reset is completed.
+23:53:24 INFO  : 'after 3000' command is executed.
+23:53:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+23:53:27 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+23:53:27 INFO  : Context for 'APU' is selected.
+23:53:33 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+23:53:33 INFO  : 'configparams force-mem-access 1' command is executed.
+23:53:33 INFO  : Context for 'APU' is selected.
+23:53:33 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+23:53:34 INFO  : 'ps7_init' command is executed.
+23:53:34 INFO  : 'ps7_post_config' command is executed.
+23:53:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:53:35 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:53:35 INFO  : 'configparams force-mem-access 0' command is executed.
+23:53:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:53:35 INFO  : Memory regions updated for context APU
+23:53:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:53:35 INFO  : 'con' command is executed.
+23:53:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:53:35 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+00:04:26 INFO  : Disconnected from the channel tcfchan#5.
+00:04:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:04:27 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+00:04:27 INFO  : 'jtag frequency' command is executed.
+00:04:27 INFO  : Context for 'APU' is selected.
+00:04:27 INFO  : System reset is completed.
+00:04:30 INFO  : 'after 3000' command is executed.
+00:04:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+00:04:34 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+00:04:34 INFO  : Context for 'APU' is selected.
+00:04:35 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+00:04:35 INFO  : 'configparams force-mem-access 1' command is executed.
+00:04:35 INFO  : Context for 'APU' is selected.
+00:04:35 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+00:04:35 INFO  : 'ps7_init' command is executed.
+00:04:36 INFO  : 'ps7_post_config' command is executed.
+00:04:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:04:36 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:04:36 INFO  : 'configparams force-mem-access 0' command is executed.
+00:04:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:04:36 INFO  : Memory regions updated for context APU
+00:04:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:04:36 INFO  : 'con' command is executed.
+00:04:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:04:36 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+00:05:41 INFO  : Disconnected from the channel tcfchan#6.
+00:05:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:05:43 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+00:05:43 INFO  : 'jtag frequency' command is executed.
+00:05:43 INFO  : Context for 'APU' is selected.
+00:05:43 INFO  : System reset is completed.
+00:05:46 INFO  : 'after 3000' command is executed.
+00:05:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+00:05:49 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+00:05:49 INFO  : Context for 'APU' is selected.
+00:05:51 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+00:05:51 INFO  : 'configparams force-mem-access 1' command is executed.
+00:05:51 INFO  : Context for 'APU' is selected.
+00:05:51 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+00:05:51 INFO  : 'ps7_init' command is executed.
+00:05:51 INFO  : 'ps7_post_config' command is executed.
+00:05:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:05:51 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:05:52 INFO  : 'configparams force-mem-access 0' command is executed.
+00:05:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:05:52 INFO  : Memory regions updated for context APU
+00:05:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:05:52 INFO  : 'con' command is executed.
+00:05:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:05:52 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+00:09:18 INFO  : Disconnected from the channel tcfchan#7.
+00:09:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:09:20 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+00:09:20 INFO  : 'jtag frequency' command is executed.
+00:09:20 INFO  : Context for 'APU' is selected.
+00:09:20 INFO  : System reset is completed.
+00:09:23 INFO  : 'after 3000' command is executed.
+00:09:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+00:09:27 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+00:09:28 INFO  : Context for 'APU' is selected.
+00:09:31 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+00:09:31 INFO  : 'configparams force-mem-access 1' command is executed.
+00:09:31 INFO  : Context for 'APU' is selected.
+00:09:31 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+00:09:32 INFO  : 'ps7_init' command is executed.
+00:09:32 INFO  : 'ps7_post_config' command is executed.
+00:09:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:09:32 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:09:32 INFO  : 'configparams force-mem-access 0' command is executed.
+00:09:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:09:33 INFO  : Memory regions updated for context APU
+00:09:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:09:33 INFO  : 'con' command is executed.
+00:09:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+00:09:33 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+11:40:43 INFO  : Disconnected from the channel tcfchan#8.
+11:40:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:40:45 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+11:40:45 INFO  : 'jtag frequency' command is executed.
+11:40:45 INFO  : Context for 'APU' is selected.
+11:40:45 INFO  : System reset is completed.
+11:40:48 INFO  : 'after 3000' command is executed.
+11:40:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+11:40:52 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+11:40:52 INFO  : Context for 'APU' is selected.
+11:40:53 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+11:40:53 INFO  : 'configparams force-mem-access 1' command is executed.
+11:40:53 INFO  : Context for 'APU' is selected.
+11:40:53 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+11:40:54 INFO  : 'ps7_init' command is executed.
+11:40:54 INFO  : 'ps7_post_config' command is executed.
+11:40:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:40:54 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:40:54 INFO  : 'configparams force-mem-access 0' command is executed.
+11:40:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:40:54 INFO  : Memory regions updated for context APU
+11:40:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:40:55 INFO  : 'con' command is executed.
+11:40:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:40:55 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+11:46:42 INFO  : Disconnected from the channel tcfchan#9.
+11:46:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:46:43 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+11:46:43 INFO  : 'jtag frequency' command is executed.
+11:46:43 INFO  : Context for 'APU' is selected.
+11:46:43 INFO  : System reset is completed.
+11:46:46 INFO  : 'after 3000' command is executed.
+11:46:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+11:46:51 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+11:46:51 INFO  : Context for 'APU' is selected.
+11:46:52 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+11:46:52 INFO  : 'configparams force-mem-access 1' command is executed.
+11:46:52 INFO  : Context for 'APU' is selected.
+11:46:52 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+11:46:52 INFO  : 'ps7_init' command is executed.
+11:46:52 INFO  : 'ps7_post_config' command is executed.
+11:46:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:46:53 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:46:53 INFO  : 'configparams force-mem-access 0' command is executed.
+11:46:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:46:53 INFO  : Memory regions updated for context APU
+11:46:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:46:53 INFO  : 'con' command is executed.
+11:46:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:46:53 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+11:52:42 INFO  : Checking for BSP changes to sync application flags for project 'ps_pl_bram'...
+11:52:59 INFO  : Disconnected from the channel tcfchan#10.
+11:52:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:53:00 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+11:53:00 INFO  : 'jtag frequency' command is executed.
+11:53:00 INFO  : Context for 'APU' is selected.
+11:53:00 INFO  : System reset is completed.
+11:53:03 INFO  : 'after 3000' command is executed.
+11:53:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+11:53:08 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+11:53:08 INFO  : Context for 'APU' is selected.
+11:53:09 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+11:53:09 INFO  : 'configparams force-mem-access 1' command is executed.
+11:53:09 INFO  : Context for 'APU' is selected.
+11:53:09 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+11:53:09 INFO  : 'ps7_init' command is executed.
+11:53:09 INFO  : 'ps7_post_config' command is executed.
+11:53:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:53:09 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:53:09 INFO  : 'configparams force-mem-access 0' command is executed.
+11:53:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:53:10 INFO  : Memory regions updated for context APU
+11:53:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:53:10 INFO  : 'con' command is executed.
+11:53:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:53:10 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+12:07:46 INFO  : Disconnected from the channel tcfchan#11.
+12:07:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:07:47 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+12:07:47 INFO  : 'jtag frequency' command is executed.
+12:07:47 INFO  : Context for 'APU' is selected.
+12:07:47 INFO  : System reset is completed.
+12:07:50 INFO  : 'after 3000' command is executed.
+12:07:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+12:07:55 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+12:07:55 INFO  : Context for 'APU' is selected.
+12:07:56 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+12:07:56 INFO  : 'configparams force-mem-access 1' command is executed.
+12:07:56 INFO  : Context for 'APU' is selected.
+12:07:56 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+12:07:56 INFO  : 'ps7_init' command is executed.
+12:07:56 INFO  : 'ps7_post_config' command is executed.
+12:07:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:07:57 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:07:57 INFO  : 'configparams force-mem-access 0' command is executed.
+12:07:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:07:57 INFO  : Memory regions updated for context APU
+12:07:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:07:57 INFO  : 'con' command is executed.
+12:07:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:07:57 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+12:08:59 INFO  : Disconnected from the channel tcfchan#12.
+12:09:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:09:00 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+12:09:00 INFO  : 'jtag frequency' command is executed.
+12:09:01 INFO  : Context for 'APU' is selected.
+12:09:01 INFO  : System reset is completed.
+12:09:04 INFO  : 'after 3000' command is executed.
+12:09:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+12:09:08 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+12:09:08 INFO  : Context for 'APU' is selected.
+12:09:10 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+12:09:10 INFO  : 'configparams force-mem-access 1' command is executed.
+12:09:10 INFO  : Context for 'APU' is selected.
+12:09:10 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+12:09:10 INFO  : 'ps7_init' command is executed.
+12:09:10 INFO  : 'ps7_post_config' command is executed.
+12:09:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:09:11 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:09:11 INFO  : 'configparams force-mem-access 0' command is executed.
+12:09:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:09:11 INFO  : Memory regions updated for context APU
+12:09:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:09:11 INFO  : 'con' command is executed.
+12:09:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:09:11 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+12:10:04 INFO  : Disconnected from the channel tcfchan#13.
+12:10:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:10:05 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+12:10:05 INFO  : 'jtag frequency' command is executed.
+12:10:05 INFO  : Context for 'APU' is selected.
+12:10:05 INFO  : System reset is completed.
+12:10:08 INFO  : 'after 3000' command is executed.
+12:10:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+12:10:13 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+12:10:13 INFO  : Context for 'APU' is selected.
+12:10:18 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+12:10:18 INFO  : 'configparams force-mem-access 1' command is executed.
+12:10:18 INFO  : Context for 'APU' is selected.
+12:10:18 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+12:10:19 INFO  : 'ps7_init' command is executed.
+12:10:19 INFO  : 'ps7_post_config' command is executed.
+12:10:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:10:20 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:10:20 INFO  : 'configparams force-mem-access 0' command is executed.
+12:10:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:10:20 INFO  : Memory regions updated for context APU
+12:10:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:10:20 INFO  : 'con' command is executed.
+12:10:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:10:20 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+12:11:17 INFO  : Disconnected from the channel tcfchan#14.
+12:11:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:11:18 INFO  : Jtag cable 'Digilent JTAG-HS1 210512180081' is selected.
+12:11:18 INFO  : 'jtag frequency' command is executed.
+12:11:18 INFO  : Context for 'APU' is selected.
+12:11:18 INFO  : System reset is completed.
+12:11:21 INFO  : 'after 3000' command is executed.
+12:11:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1' command is executed.
+12:11:26 INFO  : FPGA configured successfully with bitstream "D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit"
+12:11:26 INFO  : Context for 'APU' is selected.
+12:11:29 INFO  : Hardware design information is loaded from 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa'.
+12:11:30 INFO  : 'configparams force-mem-access 1' command is executed.
+12:11:30 INFO  : Context for 'APU' is selected.
+12:11:30 INFO  : Sourcing of 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl' is done.
+12:11:31 INFO  : 'ps7_init' command is executed.
+12:11:31 INFO  : 'ps7_post_config' command is executed.
+12:11:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:11:32 INFO  : The application 'D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:11:32 INFO  : 'configparams force-mem-access 0' command is executed.
+12:11:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-HS1 210512180081" && level==0} -index 1
+fpga -file D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/hw/system_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/ps_pl_bram/Debug/ps_pl_bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:11:32 INFO  : Memory regions updated for context APU
+12:11:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:11:32 INFO  : 'con' command is executed.
+12:11:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:11:32 INFO  : Launch script is exported to file 'D:\fpga\Embedded_Vitis\ps_pl_bram\vitis\.sdk\launch_scripts\single_application_debug\debugger_ps_pl_bram-default.tcl'
+13:36:57 WARN  : channel "tcfchan#15" closed

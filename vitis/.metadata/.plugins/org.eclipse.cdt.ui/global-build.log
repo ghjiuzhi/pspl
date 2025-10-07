@@ -1,35 +1,9 @@
 Nothing to build in platform 'system_wrapper'
 
-17:30:16 **** Incremental Build of configuration Debug for project ps_pl_bram ****
+11:52:42 **** Incremental Build of configuration Debug for project ps_pl_bram ****
 make all 
 D:/ruanjian/Vivado/Vitis/2019.2/gnuwin/bin/make --no-print-directory pre-build
 a9-linaro-pre-build-step
  
 D:/ruanjian/Vivado/Vitis/2019.2/gnuwin/bin/make --no-print-directory main-build
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/api.h:7,
-                 from ../src/main.c:8:
-../src/params.h:1: warning: "str" redefined
- #define str(s) #s
- 
-In file included from D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xpseudo_asm.h:66,
-                 from D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xil_io.h:64,
-                 from ../src/main.c:3:
-D:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bspinclude/include/xpseudo_asm_gcc.h:192: note: this is the location of the previous definition
- #define str(adr, val) __asm__ __volatile__(\
- 
-Finished building: ../src/main.c
- 
-Building target: ps_pl_bram.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/fpga/Embedded_Vitis/ps_pl_bram/vitis/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_domain/bsplib/lib -o "ps_pl_bram.elf"  ./src/address.o ./src/fips202.o ./src/fors.o ./src/hash_shake.o ./src/main.o ./src/merkle.o ./src/platform.o ./src/randombytes.o ./src/sign.o ./src/thash_shake_robust.o ./src/utils.o ./src/utilsx1.o ./src/wots.o ./src/wotsx1.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: ps_pl_bram.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size ps_pl_bram.elf  |tee "ps_pl_bram.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  65708	   1544	  23464	  90716	  1625c	ps_pl_bram.elf
-Finished building: ps_pl_bram.elf.size
- 
+make[1]: Nothing to be done for 'main-build'.
